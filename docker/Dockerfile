@@ -23,6 +23,7 @@ ENV ABR=/root/amira_blender_rendering
 #  * wget: download blender
 #  * xz-utils: decompress blender tarball
 #  * lib*: blender dependencies
+RUN apt update \
  && apt install --no-install-recommends -y \
         nano \
         curl \
