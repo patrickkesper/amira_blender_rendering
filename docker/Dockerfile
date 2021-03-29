@@ -44,7 +44,7 @@ RUN mkdir -p $HOME/.bin \
  && echo "export PATH=\${PATH}:$HOME/.bin" >> $HOME/.bashrc
 
 # Download blender installation
-RUN curl -s -o $HOME/.bin/blender.tar.xz https://download.blender.org/release/Blender2.91/blender-2.91.2-linux64.tar.xz
+RUN curl -o $HOME/.bin/blender.tar.xz http://download.blender.org/release/Blender2.91/blender-2.91.2-linux64.tar.xz
 
 # Setup Blender exe and (sym) links
 RUN cd $HOME/.bin \
