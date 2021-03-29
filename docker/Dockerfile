@@ -1,4 +1,4 @@
-FROM FROM ubuntu:20.04
+FROM ubuntu:20.04
 
 # document usage
 LABEL description="This image builds an Ubuntu20.04 image with Blender installed."
