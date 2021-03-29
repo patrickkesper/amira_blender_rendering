@@ -13,6 +13,8 @@ jobs:
     runs-on: ubuntu-20.04
 
     steps:
+      - uses: actions/checkout@v2
+
       - name: Run tests
         run: |
           if [ -f docker-compose.test.yml ]; then
@@ -32,6 +34,8 @@ jobs:
     if: github.event_name == 'push'
 
     steps:
+      - uses: actions/checkout@v2
+      
       - name: Build image
         run: docker build . --file docker/Dockerfile --tag $IMAGE_NAME
 
