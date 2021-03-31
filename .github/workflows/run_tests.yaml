@@ -1,0 +1,15 @@
+name: Run Tests
+
+on:
+  push:
+
+jobs:
+
+  tests:
+    runs-on: ubuntu-20.04
+    container: docker.pkg.github.com/patrickkesper/amira_blender_rendering/amira-ci-blender
+    steps:
+      - run: |
+          echo This job does specify a container.
+          echo It runs in the container instead of the VM.
+        name: Run in container
