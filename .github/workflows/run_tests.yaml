@@ -4,12 +4,18 @@ on:
   push:
 
 jobs:
-
   tests:
     runs-on: ubuntu-20.04
     container: ghcr.io/patrickkesper/amira_blender_rendering/amira-ci-blender:test_workflow
     steps:
-      - run: |
-          echo This job does specify a container.
-          echo It runs in the container instead of the VM.
-        name: Run in container
+      - uses: actions/checkout@v2
+
+      - run: /root/.bin/blender.d/2.91/python/bin/python3.7m -m pip install .
+        name: Setup
+
+      - run: python -m flake8 --format=pylint --output-file=flake8.log --tee
+        name: Lint
+
+      - run: scripts/run_tests --abr-path `pwd`
+        name: Test
+
