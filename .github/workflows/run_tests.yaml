@@ -7,7 +7,7 @@ jobs:
 
   tests:
     runs-on: ubuntu-20.04
-    container: docker.pkg.github.com/patrickkesper/amira_blender_rendering/amira-ci-blender
+    container: ghcr.io/patrickkesper/amira_blender_rendering/amira-ci-blender
     steps:
       - run: |
           echo This job does specify a container.
