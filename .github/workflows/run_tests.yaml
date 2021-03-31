@@ -8,7 +8,7 @@ jobs:
     env:
       IMAGE_ID: patrickkesper/amira_blender_rendering/amira-ci-blender:test_workflow
     runs-on: ubuntu-20.04
-    container: ghcr.io/$IMAGE_ID
+    container: ghcr.io/${{ env.IMAGE_ID }}
     steps:
       - uses: actions/checkout@v2
 
